@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider, CssBaseline, makeStyles } from '@material-ui/core';
 
-function App() {
+import { theme } from './components/shared/theme';
+import Header from './components/Header';
+import Home from './components/Home';
+import About from './components/About';
+import Features from './components/Features';
+import Faq from './components/Faq';
+import NewsLetter from './components/NewsLetter';
+import ContactUs from './components/ContactUs';
+import Footer from './components/Footer';
+
+const useStyles = makeStyles(theme => ({
+  bodyDiv: {
+    position: 'relative', 
+    top: '96px',
+    height: 'calc(100vh - 96px)',
+    overflow: 'auto'
+  }
+}));
+
+const App = () => {
+
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Header />
+        <div className={classes.bodyDiv}>
+          <Home />
+          <Features />
+          <About />
+          <Faq />
+          <NewsLetter />
+          <ContactUs />
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </>
   );
 }
 
