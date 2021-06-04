@@ -1,18 +1,27 @@
+import { useState, useEffect } from 'react';
 import {
   makeStyles,
   Typography,
   Grid,
   Card,
   CardContent,
+  Button
 } from '@material-ui/core';
+import Alert from '@material-ui/lab/Alert';
+import axios from 'axios';
+import Snackbar from '@material-ui/core/Snackbar';
 
+import { apiBaseUrl } from '../constants/globalConstants';
 import CustomInput from './shared/CustomInput';
 import CustomButton from './shared/CustomButton';
 import CustomSelect from './shared/CustomSelect';
 import UserName from '../assets/icons/username.svg';
 import Email from '../assets/icons/email.svg';
 import Mobile from '../assets/icons/mobile.svg';
+import Skype from '../assets/icons/skype.svg';
+import Telegram from '../assets/icons/telegram.svg';
 import Message from '../assets/icons/message.svg';
+import Spinner from './shared/spinner';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -52,20 +61,161 @@ const useStyles = makeStyles(theme => ({
     opacity: '0.8'
   },
   smDiv: {
-    display: 'flex',
-    flexDirection: 'row'
+    // display: 'flex',
+    // flexDirection: 'row'
   },
   submitDiv: {
     paddingTop: theme.spacing(2)
+  },
+  errorText: {
+    color: 'red',
+    display: 'flex'
   }
 }));
+
 
 const ContactUs = () => {
 
   const classes = useStyles();
+  const [initialRender, setInitialRender] = useState(false);
+  const [form, setForm] = useState({
+    userName: '',
+    email: '',
+    mobile: '',
+    skypeId: '',
+    telegramId: '',
+    message: ''
+  });
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  // Snackbar
+  const [snack, setSnack] = useState({
+    open: false,
+    vertical: 'top',
+    horizontal: 'right',
+  });
+  const { vertical, horizontal, open } = snack;
+  const snackOpen = () => {
+    setSnack({ open: true, vertical: 'top', horizontal: 'right' });
+  };
+  const snackClose = () => {
+    setSnack({ ...snack, open: false });
+  };
+  const [success, setSuccess] = useState(false);
+  const [snackMsg, setSnackMsg] = useState('fdaffafasdffafdafadsfaf');
+
+  useEffect(() => {
+    if (initialRender) {
+      validate();
+      submitFnBtn();
+    }
+    setInitialRender(true);
+  }, [form]);
+
+  const validate = (id) => {
+    try {
+      switch (id) {
+        case 'userName':
+          if (form.userName.length >= 4) {
+            return false;
+          } else { return true; }
+        case 'email':
+          let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+          if (form.email.match(reg)) {
+            return false;
+          } else {
+            return true;
+          }
+        case 'mobile':
+          if (form.mobile.length === 10) {
+            return false;
+          } else { return true; }
+      }
+    } catch (error) { console.log(error) }
+  }
+
+  const validateText = (id) => {
+    try {
+      switch (id) {
+        case 'userName':
+          if (form.userName.length >= 4) {
+            return '';
+          } else { return 'Username should be of atleast four characters'; }
+        case 'email':
+          let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+          if (form.email.match(reg)) {
+            return '';
+          } else {
+            return 'Email is invalid';
+          }
+        case 'mobile':
+          if (form.mobile.length === 10) {
+            return '';
+          } else { return 'Mobile number is of 10 digits'; }
+      }
+    } catch (error) { console.log(error); }
+  }
+
+  const handleSubmit = async () => {
+    try {
+      setIsSubmit(true);
+      const res = await axios.post(`${apiBaseUrl}/user/randomUser`, { ...form });
+      setSuccess(true);
+      setSnackMsg(res.data.message);
+      snackOpen();
+    } catch (error) {
+      if (!!error && error.response && error.response.data.message) {
+        setSnackMsg(error.response.data.message)
+        snackOpen();
+      } else if (!!error.message) {
+        setSnackMsg(error.message)
+        snackOpen();
+      } else {
+        setSnackMsg('Something went wrong , please try again')
+        snackOpen();
+      }
+    } finally {
+      setIsSubmit(false);
+      setForm({
+        userName: '',
+        email: '',
+        mobile: '',
+        skypeId: '',
+        telegramId: '',
+        message: ''
+      });
+    }
+  }
+
+  const submitFnBtn = () => {
+    try {
+      if ((!validate('userName') && !validate('email') && !validate('mobile')) &&
+        (form.userName !== '' && form.email !== '' && form.mobile !== '')) {
+        return false;
+      }
+      return true;
+    } catch (error) { console.log(error) }
+  }
 
   return (
     <div className={classes.root}>
+
+      <Button onClick={snackOpen}>Top-Right</Button>
+
+      <Snackbar
+        key={vertical + horizontal}
+        anchorOrigin={{ vertical, horizontal }}
+        open={open}
+        autoHideDuration={5000}
+        onClose={snackClose}
+      >
+        {
+          <Alert onClose={snackClose} severity={success ? 'success' : 'error'} style={{ zIndex: '999999' }}>
+            {snackMsg}
+          </Alert>
+        }
+      </Snackbar>
+
       <Typography variant="h4" className={classes.heading}>
         Let's Talk Something To Solve Something.
       </Typography>
@@ -78,68 +228,115 @@ const ContactUs = () => {
                 <Typography variant="h6">
                   Write to us
                 </Typography>
-                <form style={{ width: '100%' }}>
+                <form style={{ width: '100%' }} noValidate autoComplete="off">
                   <CustomInput
-                    id="1"
+                    id="userName"
                     ia={<img src={UserName} alt="" />}
                     placeholder="Enter User Name"
+                    value={form.userName}
+                    onChange={e => setForm({ ...form, [e.target.id]: e.target.value })}
+                    error={form.userName !== '' && validate('userName')}
+                  // helperText={form.userName !== '' && validateText('userName')}
                   />
+                  {(form.userName !== '' && validateText('userName')) ?
+                    <span className={classes.errorText}>{validateText('userName')}</span> : ''}
                   <CustomInput
-                    id="2"
+                    id="email"
                     ia={<img src={Email} alt="" />}
                     placeholder="Enter Email Id"
+                    value={form.email}
+                    onChange={e => setForm({ ...form, [e.target.id]: e.target.value })}
+                    error={form.email !== '' && validate('email')}
+                  // helperText={form.email !== '' && validateText('email')}
                   />
+                  {(form.email !== '' && validateText('email')) ?
+                    <span className={classes.errorText}>{validateText('email')}</span> : ''}
                   <CustomInput
-                    id="3"
+                    id="mobile"
+                    type="number"
                     ia={<img src={Mobile} alt="" />}
                     placeholder="Enter Mobile Number"
+                    value={form.mobile}
+                    onChange={e => setForm({ ...form, [e.target.id]: e.target.value })}
+                    error={form.mobile !== '' && validate('mobile')}
+                  // helperText={form.mobile !== '' && validateText('mobile')}
                   />
+                  {(form.mobile !== '' && validateText('mobile')) ?
+                    <span className={classes.errorText}>{validateText('mobile')}</span> : ''}
                   <div className={classes.additionalDiv}>
                     <Typography variant="h6">
                       Additional Information
                     </Typography>
-                    <Typography variant="p" className={classes.pDiv}>
+                    <Typography variant="subtitle2" className={classes.pDiv}>
                       Indicate the desired communication method
                     </Typography>
                   </div>
                   <div className={classes.smDiv}>
                     <Grid container>
-                      <Grid item md={6}>
+                      <Grid item md={6} xs={12}>
                         <CustomSelect
                           id="5"
-                          options={options}
+                          name="Skype"
+                          icon={Skype}
                         />
                       </Grid>
-                      <Grid item md={6}>
+                      <Grid item md={6} xs={12}>
                         <CustomInput
-                          id="6"
+                          id="skypeId"
                           placeholder="@profile"
+                          value={form.skypeId}
+                          onChange={e => setForm({ ...form, [e.target.id]: e.target.value })}
+                        />
+                      </Grid>
+                    </Grid>
+                    <Grid container>
+                      <Grid item md={6} xs={12}>
+                        <CustomSelect
+                          id="7"
+                          name="Telegram"
+                          icon={Telegram}
+                        />
+                      </Grid>
+                      <Grid item md={6} xs={12}>
+                        <CustomInput
+                          id="telegramId"
+                          placeholder="@profile"
+                          value={form.telegramId}
+                          onChange={e => setForm({ ...form, [e.target.id]: e.target.value })}
                         />
                       </Grid>
                     </Grid>
                   </div>
                   <CustomInput
-                    id="4"
+                    id="message"
                     ia={<img src={Message} alt="" />}
                     placeholder="Message"
+                    value={form.message}
+                    onChange={e => setForm({ ...form, [e.target.id]: e.target.value })}
                   />
                 </form>
               </CardContent>
             </Card>
             <div className={classes.submitDiv}>
-              <CustomButton>SUBMIT NOW</CustomButton>
+              <CustomButton disabled={submitFnBtn()} onClick={handleSubmit}>
+                {isSubmit ? <Spinner /> : 'SUBMIT NOW'}
+              </CustomButton>
             </div>
           </div>
         </Grid>
         <Grid item md={3}></Grid>
       </Grid>
+
+
+
+
     </div>
   );
 }
 
-const options = [
-  { title: 'Telegram', id: 'telegram' },
-  { title: 'Skype', id: 'skype' },
-];
+// const options = [
+//   { title: 'Telegram', id: 'telegram' },
+//   { title: 'Skype', id: 'skype' },
+// ];
 
 export default ContactUs;

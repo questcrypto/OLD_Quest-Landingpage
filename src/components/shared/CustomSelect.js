@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import {
   makeStyles,
-  TextField,
-  InputAdornment
+  TextField
 } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
@@ -15,10 +14,18 @@ const useStyles = makeStyles(theme => ({
       width: '95%',
       borderBottom: '1px solid #E2E4E5',
       position: 'relative',
-      bottom: '9px'
+      marginTop: '7px'
+      // bottom: '9px'
+    },
+    '& .MuiInputLabel-formControl': {
+      top: '-24px'
     }
   },
-
+  labelText: {
+    position: 'relative', 
+    bottom: '5px', 
+    color: '#302E35'
+  }
 }));
 
 const CustomSelect = (props) => {
@@ -33,19 +40,29 @@ const CustomSelect = (props) => {
     getOptionLabel: (option) => option.title,
   };
 
-  const { id, options, ...other } = props;
+  const { id, name, icon, ...other } = props;
 
-  useEffect(() => {
-    defaultProps.options = options;
-  }, [])
+  // useEffect(() => {
+  //   defaultProps.options = options;
+  // }, [])
 
   return (
     <Autocomplete
       {...defaultProps}
       id={id}
-      renderInput={(params) => <TextField 
-        {...params} 
-        margin="normal" />}
+      disabled
+      renderInput={
+        (params) => <TextField 
+          {...params} 
+          label={
+            <>
+              <img src={icon} alt={name} />&nbsp;&nbsp;
+              <span className={classes.labelText}>{name}</span>
+            </>
+          } 
+          // margin="normal" 
+      />
+      }
       {...other}
       className={classes.root}
     />

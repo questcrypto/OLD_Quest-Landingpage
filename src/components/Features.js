@@ -116,8 +116,8 @@ const Features = () => {
               <div className={classes.imgDiv}>
                 <img src={CryptoImg} alt="crypto" />
               </div>
-              <Typography varaint="h4" className={classes.title}>CRYPTO</Typography>
-              <Typography varaint="subtitle1" className={classes.subTitle2}>
+              <Typography variant="h4" className={classes.title}>CRYPTO</Typography>
+              <Typography variant="subtitle1" className={classes.subTitle2}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
               </Typography>
               <div className={classes.btnDiv}>
@@ -131,8 +131,8 @@ const Features = () => {
               <div className={classes.imgDiv}>
                 <img src={RealEstateImg} alt="Real Estate" />
               </div>
-              <Typography varaint="h4" className={classes.title}>REAL ESTATE</Typography>
-              <Typography varaint="subtitle1" className={classes.subTitle2}>
+              <Typography variant="h4" className={classes.title}>REAL ESTATE</Typography>
+              <Typography variant="subtitle1" className={classes.subTitle2}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
             </Typography>
               <div className={classes.btnDiv}>
@@ -146,8 +146,8 @@ const Features = () => {
               <div className={classes.imgDiv}>
                 <img src={IcoImg} alt="ICO" />
               </div>
-              <Typography varaint="h4" className={classes.title}>ICO</Typography>
-              <Typography varaint="subtitle1" className={classes.subTitle2}>
+              <Typography variant="h4" className={classes.title}>ICO</Typography>
+              <Typography variant="subtitle1" className={classes.subTitle2}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
             </Typography>
               <div className={classes.btnDiv}>
@@ -167,7 +167,7 @@ const Features = () => {
                   <Typography variant="h4" gutterBottom className={classes.title3}>
                     A crypto wallet & gateway to block chain apps
                 </Typography>
-                  <Typography varaint="subtitle1" gutterBottom className={classes.subTitle3}>
+                  <Typography variant="subtitle1" gutterBottom className={classes.subTitle3}>
                     Start exploring Strategic Land applications in seconds by connecting with MetaMask
                  </Typography>
                   <CustomButton classes={{ root: classes.btn }}>

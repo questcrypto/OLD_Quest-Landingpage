@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3)
   },
   subTitle: {
-    padding: theme.spacing(3),
+    // padding: theme.spacing(3),
     fontSize: '18px',
     opacity: '0.8'
   },
@@ -34,7 +34,10 @@ const useStyles = makeStyles(theme => ({
     border: '1px solid #FFFFFF',
     boxShadow: '0px 3px 1px - 2px rgba(30, 52, 68, 0.2)',
     borderRadius: '2px',
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    '&:hover': {
+      border: '1px solid #FFFFFF'
+    }
   }
 }));
 
@@ -47,12 +50,12 @@ const NewsLetter = () => {
       <Typography variant="h4" className={classes.title}>
         Receive our NewsLetter
       </Typography>
-      <Typography variant="p" className={classes.subTitle}>
+      <Typography variant="subtitle1" className={classes.subTitle}>
         The Time is now! Sign up to receive updates and announcements
       </Typography>
       <div className={classes.btnDiv}>
         <CustomButton
-          variant="default"
+          variant="outlined"
           classes={{ root: classes.getStartedBtn }}
         >GET STARTED</CustomButton>
         <CustomButton

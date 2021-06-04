@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px`,
     boxShadow: 'none',
-    zIndex: '99999'
+    zIndex: '99'
   },
   logo: {},
   menuDiv: {
@@ -96,8 +96,8 @@ const Header = () => {
         <div className={classes.menuDiv}>
           {menuItems.map((item, i) => {
             return (
-              <a href={item.id} className={classes.link}>
-                <MenuItem classes={{ root: classes.menuItemLi }} key={i}>
+              <a key={i} href={item.id} className={classes.link}>
+                <MenuItem classes={{ root: classes.menuItemLi }}>
                   {item.label}
                 </MenuItem>
               </a>
@@ -141,8 +141,8 @@ const Header = () => {
           >
             {menuItems.map((item, i) => {
               return (
-                <a href={item.id} className={classes.link}>
-                  <MenuItem onClick={handleClose} classes={{ root: classes.menuItemLi }} key={i}>
+                <a key={item.id} href={item.id} className={classes.link}>
+                  <MenuItem onClick={handleClose} classes={{ root: classes.menuItemLi }} >
                     {item.label}
                   </MenuItem>
                 </a>

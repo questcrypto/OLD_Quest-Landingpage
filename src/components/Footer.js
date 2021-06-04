@@ -46,7 +46,7 @@ const Footer = () => {
         <Grid item sm={5} xs={12}>
           <div className={classes.firstDiv}>
             <img src={FooterLogo} alt="Logo" />
-            <Typography varaint="h6" className={classes.logoText}>
+            <Typography variant="h6" className={classes.logoText}>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             </Typography>
           </div>
@@ -82,7 +82,7 @@ const Footer = () => {
 
         <Grid item sm={3} xs={12}>
           <div className={classes.rightDiv}>
-            <Typography varaint="h6">
+            <Typography variant="h6">
               Follow us on social media
             </Typography>
             <div className={classes.socialMediaDiv}>

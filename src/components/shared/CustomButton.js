@@ -7,7 +7,12 @@ const useStyles = makeStyles(theme => ({
   root: {
     // boxShadow: `0px 3px 1px -2px rgba(30, 52, 68, 0.2), 0px 2px 2px rgba(30, 52, 68, 0.14), 
     //   0px 1px 5px rgba(30, 52, 68, 0.12)`,
-    borderRadius: '2px'
+    borderRadius: '2px',
+    '&:disabled': {
+      backgroundColor: theme.palette.primary.main,
+      color: '#FFF',
+      opacity: 0.8,
+    }
   }
 }));
 
