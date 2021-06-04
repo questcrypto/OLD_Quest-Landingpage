@@ -200,8 +200,6 @@ const ContactUs = () => {
   return (
     <div className={classes.root}>
 
-      <Button onClick={snackOpen}>Top-Right</Button>
-
       <Snackbar
         key={vertical + horizontal}
         anchorOrigin={{ vertical, horizontal }}
