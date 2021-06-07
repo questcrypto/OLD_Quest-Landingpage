@@ -45,6 +45,18 @@ const NewsLetter = () => {
 
   const classes = useStyles();
 
+  const getStartedFn = () => {
+    try {
+      window.open('https://questcrypto.app/');
+    } catch(error) { console.log(error) }
+  }
+
+  const signUpFn = () => {
+    try {
+      window.open('https://questcrypto.app/');
+    } catch(error) { console.log(error) }
+  }
+
   return (
     <div className={classes.root}>
       <Typography variant="h4" className={classes.title}>
@@ -57,10 +69,12 @@ const NewsLetter = () => {
         <CustomButton
           variant="outlined"
           classes={{ root: classes.getStartedBtn }}
+          onClick={getStartedFn}
         >GET STARTED</CustomButton>
         <CustomButton
           style={{ marginLeft: '16px' }}
           classes={{ root: classes.btn }}
+          onClick={signUpFn}
         >SIGN UP</CustomButton>
       </div>
     </div>

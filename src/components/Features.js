@@ -94,6 +94,18 @@ const Features = () => {
 
   const classes = useStyles();
 
+  const learnMoreFn = () => {
+    try {
+      window.open('https://questcrypto.app/');
+    } catch(error) { console.log(error) }
+  }
+
+  const connectFn = () => {
+    try {
+      window.open('https://questcrypto.app/');
+    } catch(error) { console.log(error) }
+  }
+
   return (
     <>
       <div className={classes.coverDiv}>
@@ -121,7 +133,7 @@ const Features = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
               </Typography>
               <div className={classes.btnDiv}>
-                <CustomButton>LEARN MORE</CustomButton>
+                <CustomButton onClick={learnMoreFn}>LEARN MORE</CustomButton>
               </div>
             </div>
           </Grid>
@@ -136,7 +148,7 @@ const Features = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
             </Typography>
               <div className={classes.btnDiv}>
-                <CustomButton>LEARN MORE</CustomButton>
+                <CustomButton onClick={learnMoreFn}>LEARN MORE</CustomButton>
               </div>
             </div>
           </Grid>
@@ -151,7 +163,7 @@ const Features = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
             </Typography>
               <div className={classes.btnDiv}>
-                <CustomButton>LEARN MORE</CustomButton>
+                <CustomButton onClick={learnMoreFn}>LEARN MORE</CustomButton>
               </div>
             </div>
           </Grid>
@@ -171,7 +183,7 @@ const Features = () => {
                     Start exploring Strategic Land applications in seconds by connecting with MetaMask
                  </Typography>
                   <CustomButton classes={{ root: classes.btn }}>
-                    <span className={classes.connectBtnLabel}>CONNECT NOW</span>
+                    <span className={classes.connectBtnLabel} onClick={connectFn}>CONNECT NOW</span>
                   </CustomButton>
                 </div>
               </Grid>

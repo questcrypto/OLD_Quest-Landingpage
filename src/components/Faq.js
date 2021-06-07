@@ -10,6 +10,9 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import CustomButton from './shared/CustomButton';
 import CryptoCover from '../assets/images/cryptoCover2.png';
+import Dots from '../assets/images/dots.png';
+import Question from '../assets/images/question.png';
+
 
 const accordionItems = [
   { heading: 'Question 1', content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' },
@@ -44,6 +47,9 @@ const useStyles = makeStyles(theme => ({
   coverDiv: {
     position: 'absolute',
     // left: '87%'
+  },
+  absoluteClass: {
+    position: 'absolute',
   }
 }));
 
@@ -54,12 +60,15 @@ const Faq = (props) => {
   return (
     <>
       <div id="faq" className={classes.mainDiv}>
+        <img src={Dots} className={classes.absoluteClass} />
         <Typography variant="h4" className={classes.mainHeading}>
           Frequently Asked Questions
       </Typography>
         <div>
           <Grid container>
-            <Grid item md={2}></Grid>
+            <Grid item md={2}>
+              <img src={Question} className={classes.absoluteClass} />
+            </Grid>
             <Grid item md={8} xs={12}>
               {accordionItems.map((item, i) => {
                 return (
@@ -89,7 +98,7 @@ const Faq = (props) => {
                 );
               })}
             </Grid>
-            <Grid item md={2} style={{ display: 'flex', justifyContent: 'flex-end'}}>
+            <Grid item md={2} style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <div className={classes.coverDiv}>
                 <img src={CryptoCover} alt="" />
               </div>

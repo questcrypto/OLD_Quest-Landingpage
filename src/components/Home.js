@@ -2,6 +2,7 @@ import { makeStyles, Grid, Typography } from '@material-ui/core';
 
 import HomeImg from '../assets/images/home.png';
 import CustomButton from './shared/CustomButton';
+import Triangle from '../assets/images/triangle.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -11,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     padding: `${theme.spacing(4)}px ${theme.spacing(10)}px`,
     '@media (max-width: 1024px)': {
       padding: `${theme.spacing(4)}px ${theme.spacing(1)}px`,
-    },
+    }
   },
   rightContent: {
     '& img': {
@@ -33,11 +34,18 @@ const Home = () => {
 
   const classes = useStyles();
 
+  const getStartedFn = () => {
+    try {
+      window.open('https://questcrypto.app/');
+    } catch(error) { console.log(error) }
+  }
+
   return (
     <>
       <Grid id="home" container className={classes.root}>
 
-        <Grid item md={6} xs={12} className={classes.leftContent}>
+        <Grid item md={6} xs={12} className={classes.leftContent} >
+          <img src={Triangle} style={{ position: 'absolute' }} />
           <div>
             <Typography variant="h3" className={classes.title}>
               Buy/Sell your NFT's On Stragetic Land
@@ -50,7 +58,7 @@ const Home = () => {
           </Typography>
           </div>
           <div className={classes.btnDiv}>
-            <CustomButton>GET STARTED</CustomButton>
+            <CustomButton onClick={getStartedFn}>GET STARTED</CustomButton>
           </div>
         </Grid>
 

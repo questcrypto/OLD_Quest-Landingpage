@@ -24,6 +24,7 @@ const useStyles = makeStyles(theme => ({
   centerDiv: {},
   centerItems: {
     paddingBottom: theme.spacing(4),
+    cursor: 'pointer'
   },
   rightDiv: {},
   socialMediaDiv: {
@@ -38,6 +39,18 @@ const useStyles = makeStyles(theme => ({
 const Footer = () => {
 
   const classes = useStyles();
+
+  const marketPlaceFn = () => {
+    try {
+      window.open('https://questcrypto.app/');
+    } catch(error) { console.log(error) }
+  }
+
+  const telegramFn = () => {
+    try {
+      window.open('https://questcrypto.app/');
+    } catch(error) { console.log(error) }
+  }
 
   return (
     <div className={classes.root}>
@@ -54,7 +67,7 @@ const Footer = () => {
 
         <Grid item sm={2} xs={12}>
           <div className={classes.centerDiv}>
-            <div className={classes.centerItems}>
+            <div className={classes.centerItems} onClick={marketPlaceFn}>
               Market Place
             </div>
             <div className={classes.centerItems}>
@@ -86,7 +99,7 @@ const Footer = () => {
               Follow us on social media
             </Typography>
             <div className={classes.socialMediaDiv}>
-              <img src={Telegram} alt="Telegram" className={classes.smIcon} />
+              <img src={Telegram} alt="Telegram" className={classes.smIcon} onClick={telegramFn}/>
               <img src={Reddit} alt="Reddit" className={classes.smIcon} />
               <img src={Twitter} alt="Twitter" className={classes.smIcon} />
               <img src={Instagram} alt="Instagram" className={classes.smIcon} />

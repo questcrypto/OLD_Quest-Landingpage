@@ -36,6 +36,18 @@ const About = () => {
 
   const classes = useStyles();
 
+  const learnMoreFn = () => {
+    try {
+      window.open('https://questcrypto.app/');
+    } catch(error) { console.log(error) }
+  }
+
+  const learnAboutFn = () => {
+    try {
+      window.open('https://questcrypto.app/');
+    } catch(error) { console.log(error) }
+  }
+
   return (
     <div className={classes.root}>
       <Grid container id="docs">
@@ -51,7 +63,7 @@ const About = () => {
               Do you want to know all the nitty gritty details ? Click below mentioned button and receive a copy of
               our whitepaper now.
             </Typography>
-            <CustomButton>
+            <CustomButton onClick={learnMoreFn}>
               LEARN MORE
             </CustomButton>
           </div>
@@ -66,12 +78,12 @@ const About = () => {
       </Grid>
 
       <Grid container id="about">
-        <Grid item md={6} xs={12} >
+        <Grid item md={6} xs={12} sm={12} >
           <div>
-            <img src={AboutWebApp} alt="About" style={{ maxWidth: '100%' }} />
+            <img src={AboutWebApp} alt="About" style={{ width: '100%', maxWidth: '100%' }} />
           </div>
         </Grid>
-        <Grid item md={6} xs={12}>
+        <Grid item md={6} xs={12} sm={12}>
           <div className={classes.textRightDiv}>
             <Typography variant="h4" className={classes.title}>
               About Company
@@ -82,7 +94,7 @@ const About = () => {
               Do you want to know all the nitty gritty details ? Click below mentioned button and receive a copy of
               our whitepaper now.
             </Typography>
-            <CustomButton>
+            <CustomButton onClick={learnAboutFn}>
               ABOUT US
             </CustomButton>
           </div>

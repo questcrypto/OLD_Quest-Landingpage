@@ -87,6 +87,11 @@ const Header = () => {
     setAnchorEl(null);
   };
 
+  const signInFn = () => {
+    console.log(1);
+    // alert(1);
+  }
+
   return (
     <AppBar position="fixed" color="transparent" className={classes.header}>
       <Toolbar>
@@ -151,6 +156,7 @@ const Header = () => {
             {/* <MenuItem classes={{root: classes.menuItemLi}}> */}
             <div className={classes.menuItemLi} onClick={handleClose}>
               <CustomButton
+                onClick={signInFn}
               >
                 SIGN IN
             </CustomButton>
