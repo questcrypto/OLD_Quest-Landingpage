@@ -45,7 +45,7 @@ const Home = () => {
       <Grid id="home" container className={classes.root}>
 
         <Grid item md={6} xs={12} className={classes.leftContent} >
-          <img src={Triangle} style={{ position: 'absolute' }} />
+          <img src={Triangle} style={{ position: 'absolute' }} alt='' />
           <div>
             <Typography variant="h3" className={classes.title}>
               Buy/Sell your NFT's On Stragetic Land

@@ -1,7 +1,6 @@
 import {
   makeStyles,
   Input as MuiInput,
-  TextField,
   InputAdornment
 } from '@material-ui/core';
 

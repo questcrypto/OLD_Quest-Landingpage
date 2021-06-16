@@ -28,9 +28,9 @@ const CustomButton = (props) => {
       color={color || "primary"}
       size={size || "large"}
       onClick={onClick}
-      disableElevation
-      disableFocusRipple
-      disableRipple
+      // disableElevation
+      // disableFocusRipple
+      // disableRipple
       {...other}
       className={classes.root}
     >

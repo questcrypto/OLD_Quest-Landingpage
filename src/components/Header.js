@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   },
   hamburgerDiv: {
     '@media (max-width: 1050px)': {
-      display: 'block',
+      // display: 'block',
       width: '100%',
       display: 'flex',
       justifyContent: 'flex-end'

@@ -60,14 +60,14 @@ const Faq = (props) => {
   return (
     <>
       <div id="faq" className={classes.mainDiv}>
-        <img src={Dots} className={classes.absoluteClass} />
+        <img src={Dots} className={classes.absoluteClass} alt='' />
         <Typography variant="h4" className={classes.mainHeading}>
           Frequently Asked Questions
       </Typography>
         <div>
           <Grid container>
             <Grid item md={2}>
-              <img src={Question} className={classes.absoluteClass} />
+              <img src={Question} className={classes.absoluteClass} alt='' />
             </Grid>
             <Grid item md={8} xs={12}>
               {accordionItems.map((item, i) => {
