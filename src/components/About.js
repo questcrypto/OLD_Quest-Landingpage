@@ -39,7 +39,8 @@ const useStyles = makeStyles(theme => ({
   },
   warfareImg: {
     position: 'relative',
-    top: '24px'
+    top: '24px',
+    paddingLeft: theme.spacing(1) 
   }
 }));
 
@@ -76,7 +77,7 @@ const About = () => {
                 <span 
                   className={classes.textUnderline}
                   onClick={() => openUrl(digitalAuditUrl)}
-                >Digital Warfare. &nbsp;
+                >Digital Warfare.
                 <img src={DigitalWarFare} alt='' className={classes.warfareImg} />
                 </span>
               </div>
