@@ -62,6 +62,7 @@ const useStyles = makeStyles(theme => ({
   mainImg: {
     width: '100%',
     height: 'auto',
+    maxHeight: '150px',
     padding: `0px ${theme.spacing(6)}px`
   },
   subImg: {
