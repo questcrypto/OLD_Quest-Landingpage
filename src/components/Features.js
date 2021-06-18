@@ -3,9 +3,8 @@ import { makeStyles, Grid, Typography } from '@material-ui/core';
 import CryptoImg from '../assets/images/crypto.png';
 import RealEstateImg from '../assets/images/realEstate.png';
 import IcoImg from '../assets/images/ico.png';
-import CustomButton from './shared/CustomButton';
-import FeatureMetaMask from '../assets/images/featureMetaMask.png';
 import CryptoCover from '../assets/images/cryptoCover.png';
+import CustomButton from './shared/CustomButton';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,6 +17,10 @@ const useStyles = makeStyles(theme => ({
   subTitle: {
     textAlign: 'center',
     opacity: 0.8
+  },
+  subSubTitle: {
+    textDecoration: 'underline',
+    cursor: 'pointer'
   },
   mainDiv: {
     padding: `${theme.spacing(6)}px 0px`,
@@ -45,46 +48,6 @@ const useStyles = makeStyles(theme => ({
   btnDiv: {
     paddingBottom: theme.spacing(3)
   },
-  metaMaskOuter: {
-    display: 'flex',
-    justifyContent: 'center'
-  },
-  metaMaskContainer: {
-    width: '90%',
-    height: 'auto',
-    background: 'linear-gradient(183.26deg, #E6BA73 4.33%, #BA8E4D 95.54%)',
-    borderRadius: '12px'
-  },
-  walletTextDiv: {
-    padding: `${theme.spacing(8)}px ${theme.spacing(12)}px`,
-    paddingRight: 0,
-    '@media (max-width: 900px)': {
-      paddingLeft: '24px'
-    },
-  },
-  walletDiv: {
-    display: 'flex',
-    justifyContent: 'center'
-  },
-  title3: {
-    paddingBottom: theme.spacing(3),
-    fontSize: '36px',
-    fontWeight: 'bold'
-  },
-  subTitle3: {
-    fontSize: '21px',
-    opacity: '0.8',
-    paddingBottom: theme.spacing(3)
-  },
-  connectBtnLabel: {
-    color: '#2B2D31'
-  },
-  btn: {
-    background: '#FFF',
-    '&:hover': {
-      background: '#FFF',
-    }
-  },
   coverDiv: {
     position: 'absolute',
   }
@@ -94,17 +57,18 @@ const Features = () => {
 
   const classes = useStyles();
 
-  const learnMoreFn = () => {
+  // URLS
+  const socialCommunity = 'https://questcryp.to/social';
+  const learnMore1 = 'https://questcryp.to/crypto';
+  const learnMore2 = 'https://questcryp.to/realestate';
+  const learnMore3 = 'https://questcryp.to/ico';
+
+  const openUrl = (url) => {
     try {
-      window.open('https://questcrypto.app/');
-    } catch(error) { console.log(error) }
+      window.open(url);
+    } catch (error) { console.log(error) }
   }
 
-  const connectFn = () => {
-    try {
-      window.open('https://questcrypto.app/');
-    } catch(error) { console.log(error) }
-  }
 
   return (
     <>
@@ -114,12 +78,16 @@ const Features = () => {
       <div id="features" className={classes.root}>
 
         <Typography variant="h4" gutterBottom className={classes.heading}>
-          Finally focus on my marketing <br />
-        strategy and delegate
-      </Typography>
+          Real Property Investing and Cryptocurrency <br />
+          Have Not United - Until Now
+        </Typography>
         <Typography variant="subtitle1" gutterBottom className={classes.subTitle}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-      </Typography>
+          QUEST Crypto is proud to announce the launch of its ICO token, KNAB. The KNAB token will be<br />
+          used to track company performance and will give governance to holder.<br />
+          <span className={classes.subSubTitle} onClick={() => openUrl(socialCommunity)}>
+            Join our social communities for real-time updates
+          </span>
+        </Typography>
 
         <Grid container className={classes.mainDiv}>
 
@@ -130,10 +98,13 @@ const Features = () => {
               </div>
               <Typography variant="h4" className={classes.title}>CRYPTO</Typography>
               <Typography variant="subtitle1" className={classes.subTitle2}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                QUEST Crypto operates in mature markets.
+                Quest products are secured, involatile,
+                and are not prone to social engineering
+                and market manipulation
               </Typography>
               <div className={classes.btnDiv}>
-                <CustomButton onClick={learnMoreFn}>LEARN MORE</CustomButton>
+                <CustomButton onClick={() => openUrl(learnMore1)}>LEARN MORE</CustomButton>
               </div>
             </div>
           </Grid>
@@ -145,10 +116,12 @@ const Features = () => {
               </div>
               <Typography variant="h4" className={classes.title}>REAL ESTATE</Typography>
               <Typography variant="subtitle1" className={classes.subTitle2}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            </Typography>
+                Quest Crypto brings establised products, like real estate, into the
+                DeFi world. Real Estate is the most reliable source of wealth in every country
+                on the planet.
+              </Typography>
               <div className={classes.btnDiv}>
-                <CustomButton onClick={learnMoreFn}>LEARN MORE</CustomButton>
+                <CustomButton onClick={() => openUrl(learnMore2)}>LEARN MORE</CustomButton>
               </div>
             </div>
           </Grid>
@@ -160,43 +133,22 @@ const Features = () => {
               </div>
               <Typography variant="h4" className={classes.title}>ICO</Typography>
               <Typography variant="subtitle1" className={classes.subTitle2}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            </Typography>
+                Participate in the KNAB ICO for governance, rewards, and access to the 
+                QUEST Marketplace. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </Typography>
               <div className={classes.btnDiv}>
-                <CustomButton onClick={learnMoreFn}>LEARN MORE</CustomButton>
+                <CustomButton onClick={() => openUrl(learnMore3)}>LEARN MORE</CustomButton>
               </div>
             </div>
           </Grid>
 
         </Grid>
 
-        <div className={classes.metaMaskOuter}>
-          <div className={classes.metaMaskContainer}>
-            <Grid container>
-
-              <Grid item md={7} xs={12}>
-                <div className={classes.walletTextDiv}>
-                  <Typography variant="h4" gutterBottom className={classes.title3}>
-                    A crypto wallet & gateway to block chain apps
-                </Typography>
-                  <Typography variant="subtitle1" gutterBottom className={classes.subTitle3}>
-                    Start exploring Strategic Land applications in seconds by connecting with MetaMask
-                 </Typography>
-                  <CustomButton classes={{ root: classes.btn }}>
-                    <span className={classes.connectBtnLabel} onClick={connectFn}>CONNECT NOW</span>
-                  </CustomButton>
-                </div>
-              </Grid>
-
-              <Grid item md={5} xs={12}>
-                <div className={classes.walletDiv}>
-                  <img src={FeatureMetaMask} alt='Meta Mask Wallet' />
-                </div>
-              </Grid>
-
-            </Grid>
-          </div>
-        </div>
 
       </div>
     </>

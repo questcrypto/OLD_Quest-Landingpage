@@ -17,7 +17,9 @@ import CustomSelect from './shared/CustomSelect';
 import UserName from '../assets/icons/username.svg';
 import Email from '../assets/icons/email.svg';
 import Mobile from '../assets/icons/mobile.svg';
-import Skype from '../assets/icons/skype.svg';
+// import Skype from '../assets/icons/skype.svg';
+// import Whatsapp from '../assets/icons/whatsapp.svg';
+import Whatsapp from '../assets/images/whatsapp.png';
 import Telegram from '../assets/icons/telegram.svg';
 import Message from '../assets/icons/message.svg';
 import Spinner from './shared/spinner';
@@ -69,6 +71,9 @@ const useStyles = makeStyles(theme => ({
   errorText: {
     color: 'red',
     display: 'flex'
+  },
+  endAdor: {
+    display: 'none'
   }
 }));
 
@@ -101,7 +106,7 @@ const ContactUs = () => {
     setSnack({ ...snack, open: false });
   };
   const [success, setSuccess] = useState(false);
-  const [snackMsg, setSnackMsg] = useState('fdaffafasdffafdafadsfaf');
+  const [snackMsg, setSnackMsg] = useState('');
 
   useEffect(() => {
     if (initialRender) {
@@ -214,7 +219,7 @@ const ContactUs = () => {
       </Snackbar>
 
       <Typography variant="h4" className={classes.heading}>
-        Let's Talk Something To Solve Something.
+        Contact Us
       </Typography>
       <Grid container>
         <Grid item md={3}></Grid>
@@ -265,7 +270,7 @@ const ContactUs = () => {
                       Additional Information
                     </Typography>
                     <Typography variant="subtitle2" className={classes.pDiv}>
-                      Indicate the desired communication method
+                      Indicate your desired communication method
                     </Typography>
                   </div>
                   <div className={classes.smDiv}>
@@ -273,8 +278,9 @@ const ContactUs = () => {
                       <Grid item md={6} xs={12}>
                         <CustomSelect
                           id="5"
-                          name="Skype"
-                          icon={Skype}
+                          name="Whatsapp"
+                          icon={Whatsapp}
+                          classes={{ endAdornment: classes.endAdor}}
                         />
                       </Grid>
                       <Grid item md={6} xs={12}>
@@ -292,6 +298,7 @@ const ContactUs = () => {
                           id="7"
                           name="Telegram"
                           icon={Telegram}
+                          classes={{ endAdornment: classes.endAdor}}
                         />
                       </Grid>
                       <Grid item md={6} xs={12}>

@@ -34,10 +34,13 @@ const Home = () => {
 
   const classes = useStyles();
 
-  const getStartedFn = () => {
+  // URLs
+  const startYourQuest = 'https://questcrypto.app';
+
+  const openUrl = (url) => {
     try {
-      window.open('https://questcrypto.app/');
-    } catch(error) { console.log(error) }
+      window.open(url);
+    } catch (error) { console.log(error) }
   }
 
   return (
@@ -48,17 +51,18 @@ const Home = () => {
           <img src={Triangle} style={{ position: 'absolute' }} alt='' />
           <div>
             <Typography variant="h3" className={classes.title}>
-              Buy/Sell your NFT's On Stragetic Land
+              Your Crypto gateway to Real Estate ownership
             </Typography>
           </div>
           <div>
             <Typography variant="h6" className={classes.subTitle}>
-              Trusted by million users, with Lightning-Fast crypto Trading Buy and Sell in Minutes.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+              QUEST empowers powers people to take back their financial health
+              through real estate secured crypto. We're revolutionizing the real estate
+              market!
           </Typography>
           </div>
           <div className={classes.btnDiv}>
-            <CustomButton onClick={getStartedFn}>GET STARTED</CustomButton>
+            <CustomButton onClick={() => openUrl(startYourQuest)}>START YOUR QUEST</CustomButton>
           </div>
         </Grid>
 

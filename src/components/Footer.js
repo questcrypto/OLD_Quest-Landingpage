@@ -40,16 +40,21 @@ const Footer = () => {
 
   const classes = useStyles();
 
-  const marketPlaceFn = () => {
+  // URLs 
+  const questMarketPlace = 'https://questcrypto.app';
+  const knabGrab = 'https://questcrypto.app';
+  const faq = 'https://questcryp.to/faq';
+  const whitepaper = 'https://questcryp.to/whitepaper';
+  const codeAudit = 'https://questcryp.to/audit';
+  const medium = 'https://questcryp.to/medium';
+  const telegram = 'https://questcryp.to/telegram';
+  const reddit = 'https://questcryp.to/reddit';
+  const twitter = 'https://questcryp.to/twittershare';
+  const instagram = 'https://questcryp.to/instagram'
+  const openUrl = (url) => {
     try {
-      window.open('https://questcrypto.app/');
-    } catch(error) { console.log(error) }
-  }
-
-  const telegramFn = () => {
-    try {
-      window.open('https://questcrypto.app/');
-    } catch(error) { console.log(error) }
+      window.open(url);
+    } catch (error) { console.log(error) }
   }
 
   return (
@@ -60,20 +65,20 @@ const Footer = () => {
           <div className={classes.firstDiv}>
             <img src={FooterLogo} alt="Logo" />
             <Typography variant="h6" className={classes.logoText}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Cryptocurrency Irrevocably Secured to Real Estate
             </Typography>
           </div>
         </Grid>
 
         <Grid item sm={2} xs={12}>
           <div className={classes.centerDiv}>
-            <div className={classes.centerItems} onClick={marketPlaceFn}>
-              Market Place
+            <div className={classes.centerItems} onClick={() => openUrl(questMarketPlace)}>
+              QUEST Marketplace
             </div>
-            <div className={classes.centerItems}>
-              Get Started
+            <div className={classes.centerItems} onClick={() => openUrl(knabGrab)}>
+              KNAB GRAB
             </div>
-            <div className={classes.centerItems}>
+            <div className={classes.centerItems} onClick={() => openUrl(faq)}>
               FAQ
             </div>
           </div>
@@ -81,13 +86,13 @@ const Footer = () => {
 
         <Grid item sm={2} xs={12}>
           <div className={classes.centerDiv}>
-            <div className={classes.centerItems}>
+            <div className={classes.centerItems} onClick={() => openUrl(whitepaper)}>
               Whitepaper
             </div>
-            <div className={classes.centerItems}>
-              About Us
+            <div className={classes.centerItems} onClick={() => openUrl(codeAudit)}>
+              Code Audit
             </div>
-            <div className={classes.centerItems}>
+            <div className={classes.centerItems} onClick={() => openUrl(medium)}>
               Medium
             </div>
           </div>
@@ -96,13 +101,13 @@ const Footer = () => {
         <Grid item sm={3} xs={12}>
           <div className={classes.rightDiv}>
             <Typography variant="h6">
-              Follow us on social media
+              Follow Us on Social Media
             </Typography>
             <div className={classes.socialMediaDiv}>
-              <img src={Telegram} alt="Telegram" className={classes.smIcon} onClick={telegramFn}/>
-              <img src={Reddit} alt="Reddit" className={classes.smIcon} />
-              <img src={Twitter} alt="Twitter" className={classes.smIcon} />
-              <img src={Instagram} alt="Instagram" className={classes.smIcon} />
+              <img src={Telegram} alt="Telegram" className={classes.smIcon} onClick={() => openUrl(telegram)} />
+              <img src={Reddit} alt="Reddit" className={classes.smIcon} onClick={() => openUrl(reddit)} />
+              <img src={Twitter} alt="Twitter" className={classes.smIcon} onClick={() => openUrl(twitter)} />
+              <img src={Instagram} alt="Instagram" className={classes.smIcon} onClick={() => openUrl(instagram)} />
             </div>
           </div>
         </Grid>

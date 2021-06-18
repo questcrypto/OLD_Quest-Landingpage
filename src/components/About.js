@@ -3,6 +3,9 @@ import { makeStyles, Grid, Typography } from '@material-ui/core';
 import CustomButton from './shared/CustomButton';
 import AboutDoc from '../assets/images/aboutDoc.png';
 import AboutWebApp from '../assets/images/aboutWebApp.png';
+// import DigitalWarFare from '../assets/images/digitalWarFare.png';
+import DigitalWarFare from '../assets/icons/digitalWarFare.svg';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,6 +32,14 @@ const useStyles = makeStyles(theme => ({
   },
   textRightDiv: {
     paddingLeft: theme.spacing(8)
+  },
+  textUnderline: {
+    textDecoration: 'underline',
+    cursor: 'pointer'
+  },
+  warfareImg: {
+    position: 'relative',
+    top: '24px'
   }
 }));
 
@@ -36,16 +47,14 @@ const About = () => {
 
   const classes = useStyles();
 
-  const learnMoreFn = () => {
+  // URLs 
+  const digitalAuditUrl = 'https://questcryp.to/digitalwarfare';
+  const knabLearnMore = 'https://questcryp.to/learnknab';
+  const marketPlaceLearnMore = 'https://questcryp.to/learnquest';
+  const openUrl = (url) => {
     try {
-      window.open('https://questcrypto.app/');
-    } catch(error) { console.log(error) }
-  }
-
-  const learnAboutFn = () => {
-    try {
-      window.open('https://questcrypto.app/');
-    } catch(error) { console.log(error) }
+      window.open(url);
+    } catch (error) { console.log(error) }
   }
 
   return (
@@ -55,15 +64,24 @@ const About = () => {
         <Grid item md={7} xs={12} sm={12}>
           <div className={classes.leftContent}>
             <Typography variant="h4" className={classes.title}>
-              About Docs
+              KNAB ICO
             </Typography>
             <Typography variant="subtitle1" className={classes.subTitle}>
-              A document released by a crypto project that gives investors technical information about
-              its concept, and a roadmap for how it plans to grow and succeed. <br />
-              Do you want to know all the nitty gritty details ? Click below mentioned button and receive a copy of
-              our whitepaper now.
+              The QUEST Crypto ICO token is KNAB, or "Bank" backwards as a nod to flipping
+              current financial institutions on their heads. The token tracks company performance and
+              provides the token holder governance and participation in reward pools.
+              <div>
+                <br />
+                Code audit performed by
+                <span 
+                  className={classes.textUnderline}
+                  onClick={() => openUrl(digitalAuditUrl)}
+                >Digital Warfare. &nbsp;
+                <img src={DigitalWarFare} alt='' className={classes.warfareImg} />
+                </span>
+              </div>
             </Typography>
-            <CustomButton onClick={learnMoreFn}>
+            <CustomButton onClick={() => openUrl(knabLearnMore)}>
               LEARN MORE
             </CustomButton>
           </div>
@@ -86,16 +104,15 @@ const About = () => {
         <Grid item md={6} xs={12} sm={12}>
           <div className={classes.textRightDiv}>
             <Typography variant="h4" className={classes.title}>
-              About Company
+              QUEST Marketplace
             </Typography>
             <Typography variant="subtitle1" className={classes.subTitle}>
-              A document released by a crypto project that gives investors technical information about
-              its concept, and a roadmap for how it plans to grow and succeed. <br />
-              Do you want to know all the nitty gritty details ? Click below mentioned button and receive a copy of
-              our whitepaper now.
+              A decentralized marketplace where property owners can tokenize and sell components of their
+              property rights to token buyers. Cryptocurrency enthusiasts now gain access to realestate markets,
+              an area previously unavailable to them. 
             </Typography>
-            <CustomButton onClick={learnAboutFn}>
-              ABOUT US
+            <CustomButton onClick={() => openUrl(marketPlaceLearnMore)}>
+              LEARN MORE
             </CustomButton>
           </div>
         </Grid>

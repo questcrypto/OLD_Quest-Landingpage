@@ -15,9 +15,9 @@ import Question from '../assets/images/question.png';
 
 
 const accordionItems = [
-  { heading: 'Question 1', content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' },
-  { heading: 'Question 2', content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' },
-  { heading: 'Question 3', content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' }
+  { heading: 'Marketplace', content: 'The QUEST Crypto marketplace provides transparency for all pledged properties through a tracking system which gives access to necessary property-specific documents. QUEST uses a proprietary patent-pending method on each property to insure against depreciation, damage, and adverse equity claims.' },
+  { heading: 'Realizing Equity Value', content: 'Real Estate is the largest untapped traditionally illiquid asset in the world. Previously, the only way to access this equity was through outdated processes that increased property debt and were exclusionary in nature. Quest Crypto enables any property owner to realize 100% of their property equity.' },
+  { heading: 'Method', content: 'QUEST Crypto’s proprietary patent-pending technology irrevocably binds the token to the DNA of the property. QUEST is superior to mortgages, liens, and other claims on the title.' }
 ];
 
 const useStyles = makeStyles(theme => ({
@@ -55,6 +55,23 @@ const useStyles = makeStyles(theme => ({
 
 
 const Faq = (props) => {
+
+  // URLs 
+  const faq1 = 'https://questcryp.to/faq1';
+  const faq2 = 'https://questcryp.to/faq2';
+  const faq3 = 'https://questcryp.to/faq3';
+  const openUrl = (index) => {
+    try {
+      if (index === 0) {
+        window.open(faq1);
+      } else if (index === 1) {
+        window.open(faq2);
+      } else if (index === 2) {
+        window.open(faq3);
+      }
+    } catch (error) { console.log(error) }
+  }
+
   const classes = useStyles();
 
   return (
@@ -91,7 +108,7 @@ const Faq = (props) => {
                     >
                       <Typography>
                         {item.content} &nbsp;
-                      <CustomButton size="small">LEARN MORE</CustomButton>
+                      <CustomButton size="small" onClick={() => openUrl(i)}>LEARN MORE</CustomButton>
                       </Typography>
                     </AccordionDetails>
                   </Accordion>

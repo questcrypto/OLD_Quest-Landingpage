@@ -15,8 +15,9 @@ import CustomButton from './shared/CustomButton';
 const menuItems = [
   { key: 'home', label: 'Home', id: '#home' },
   { key: 'features', label: 'Features', id: '#features' },
+  { key: 'ico', label: 'ICO', id: '#ico' },
   { key: 'docs', label: 'Docs', id: '#docs' },
-  { key: 'about', label: 'About', id: '#about' },
+  // { key: 'about', label: 'About', id: '#about' },
   { key: 'faq', label: 'FAQ', id: '#faq' }
 ]
 
@@ -77,6 +78,8 @@ const useStyles = makeStyles(theme => ({
 const Header = () => {
 
   const classes = useStyles();
+  // URLs
+  const marketPlace = 'https://questcrypto.app';
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -87,9 +90,10 @@ const Header = () => {
     setAnchorEl(null);
   };
 
-  const signInFn = () => {
-    console.log(1);
-    // alert(1);
+  const openUrl = (url) => {
+    try {
+      window.open(url);
+    } catch (error) { console.log(error) }
   }
 
   return (
@@ -111,6 +115,7 @@ const Header = () => {
           {/* <MenuItem classes={{root: classes.menuItemLi}}> */}
           <div className={classes.menuItemLi}>
             <CustomButton
+              onClick={() => openUrl(marketPlace)}
             >
               MARKETPLACE
             </CustomButton>
@@ -156,10 +161,10 @@ const Header = () => {
             {/* <MenuItem classes={{root: classes.menuItemLi}}> */}
             <div className={classes.menuItemLi} onClick={handleClose}>
               <CustomButton
-                onClick={signInFn}
+                onClick={() => openUrl(marketPlace)}
               >
-                SIGN IN
-            </CustomButton>
+                MARKETPLACE
+              </CustomButton>
             </div>
             {/* </MenuItem> */}
           </Menu>

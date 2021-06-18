@@ -5,8 +5,13 @@ import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
 import Features from './components/Features';
+import KnabCountDown from './components/KnabCountDown';
+import KnabGrab from './components/KnabGrab';
+import CrowdSaleContract from './components/CrowdSaleContract';
+import ConnectNow from './components/ConnectNow';
 import Faq from './components/Faq';
-import NewsLetter from './components/NewsLetter';
+// import NewsLetter from './components/NewsLetter';
+import StartQuest from './components/StartQuest';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 
@@ -31,9 +36,17 @@ const App = () => {
         <div className={classes.bodyDiv}>
           <Home />
           <Features />
+          <KnabCountDown />
+          <KnabGrab />
+          <CrowdSaleContract />
+          <ConnectNow />
           <About />
           <Faq />
-          <NewsLetter />
+
+          {/* Removed from Landing Page */}
+          {/* <NewsLetter /> */}
+
+          <StartQuest />
           <ContactUs />
           <Footer />
         </div>
