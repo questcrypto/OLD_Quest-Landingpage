@@ -56,7 +56,7 @@ const Home = () => {
           </div>
           <div>
             <Typography variant="h6" className={classes.subTitle}>
-              QUEST empowers powers people to take back their financial health
+              QUEST empowers people to take back their financial health
               through real estate secured crypto. We're revolutionizing the real estate
               market!
           </Typography>
