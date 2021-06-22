@@ -117,8 +117,8 @@ const KnabGrab = () => {
               <div className={classes.subDiv}>
                 <img src={step1} alt='' className={classes.subImg} />
                 <Typography variant="subtitle2" className={classes.textDiv}>
-                  Purchase USDC tokens from your favorite exchange and 
-                  <span className={classes.linkText} onClick={() => openUrl(step2Url)}> transfer them to Polygon Network </span>
+                  Purchase USDC from your favorite exchange and 
+                  <span className={classes.linkText} onClick={() => openUrl(step2Url)}> transfer to Polygon Network </span>
                   (Layer 2)
                 </Typography>
               </div>
