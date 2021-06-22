@@ -94,7 +94,7 @@ const KnabCountDown = () => {
 
   useEffect(() => {
 
-    let countDownDate = new Date("July 21, 2021 23:59:60").getTime();
+    let countDownDate = new Date("July 1, 2021 00:00:00").getTime();
     // Update the count down every 1 second
     let data = setInterval(function () {
 
