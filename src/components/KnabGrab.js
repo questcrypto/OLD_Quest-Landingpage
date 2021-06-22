@@ -87,6 +87,7 @@ const useStyles = makeStyles(theme => ({
 const KnabGrab = () => {
 
   // URLs
+  const step1Url = 'https://questcryp.to/bridge';
   const step2Url = 'https://questcryp.to/metamask';
   const step3Url = 'https://questcryp.to/matic';
   const step4Url = 'https://https://questcryp.to/app';
@@ -118,7 +119,7 @@ const KnabGrab = () => {
                 <img src={step1} alt='' className={classes.subImg} />
                 <Typography variant="subtitle2" className={classes.textDiv}>
                   Purchase USDC from your favorite exchange and 
-                  <span className={classes.linkText} onClick={() => openUrl(step2Url)}> transfer to Polygon Network </span>
+                  <span className={classes.linkText} onClick={() => openUrl(step1Url)}> transfer to Polygon Network </span>
                   (Layer 2)
                 </Typography>
               </div>
