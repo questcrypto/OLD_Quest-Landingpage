@@ -120,7 +120,6 @@ const KnabGrab = () => {
                 <Typography variant="subtitle2" className={classes.textDiv}>
                   Purchase USDC from your favorite exchange and 
                   <span className={classes.linkText} onClick={() => openUrl(step1Url)}> transfer to Polygon Network </span>
-                  (Layer 2)
                 </Typography>
               </div>
               <div className={classes.line}></div>
