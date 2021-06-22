@@ -117,7 +117,9 @@ const KnabGrab = () => {
               <div className={classes.subDiv}>
                 <img src={step1} alt='' className={classes.subImg} />
                 <Typography variant="subtitle2" className={classes.textDiv}>
-                  Purchase Matic token from your favourite exchange
+                  Purchase USDC tokens from your favorite exchange and 
+                  <span className={classes.linkText} onClick={() => openUrl(step2Url)}> transfer them to Polygon Network </span>
+                  (Layer 2)
                 </Typography>
               </div>
               <div className={classes.line}></div>
@@ -150,7 +152,7 @@ const KnabGrab = () => {
                 <img src={step3} alt='' className={classes.subImg} />
                 <Typography variant="subtitle2" className={classes.textDiv}>
                   Configure MetaMask to use the
-                  <span className={classes.linkText} onClick={() => openUrl(step3Url)}> Matic/Polygon </span>
+                  <span className={classes.linkText} onClick={() => openUrl(step3Url)}> Polygon/Matic </span>
                   network.
                 </Typography>
               </div>
