@@ -1,6 +1,7 @@
 import { makeStyles, Grid, Typography } from '@material-ui/core';
 import CustomButton from './shared/CustomButton';
 import FeatureMetaMask from '../assets/images/featureMetaMask.png';
+import skyline  from  '../assets/images/skyline.svg';
 
 const ConnectNow = () => {
 
@@ -80,8 +81,9 @@ const ConnectNow = () => {
               </div>
             </Grid>
             <Grid item md={5} xs={12}>
-              <div className={classes.walletDiv}>
-                <img src={FeatureMetaMask} alt='Meta Mask Wallet' />
+              <div className={classes.walletDiv} style={{ position: 'relative'}}>
+                <img src={skyline} alt='Meta Mask Wallet' style={{position: 'relative'}} />
+                <img src={FeatureMetaMask} alt='Meta Mask Wallet' style={{position: 'absolute'}} />
               </div>
             </Grid>
           </Grid>
