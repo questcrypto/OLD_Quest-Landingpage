@@ -44,7 +44,7 @@ const CustomButton = (props) => {
           // disableFocusRipple
           // disableRipple
           {...other}
-          className={`${classes.root} animationButton`}
+          className={classes.root}
         >
           {props.children}
         </MuiButton>
