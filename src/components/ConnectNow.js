@@ -77,11 +77,11 @@ const ConnectNow = () => {
 
     bgImage: {
       position: "absolute",
-      top: 0,
+      top: '10px',
       width: "100%",
       display: "flex",
       alignItems: "center",
-      justifyContent: "center",
+      justifyContent: "flex-end",
       overflow: "hidden",
       // zIndex:/
     },

@@ -11,13 +11,6 @@ const useStyles = makeStyles((theme) => ({
       opacity: 0.8,
     },
   },
-  grabKnab: {
-    backgroundColor: theme.palette.primary.main,
-    color: "#FFF",
-    borderRadius: "33px",
-    paddingRight: "40px",
-    paddingLeft: "40px",
-  },
 }));
 
 const CustomButton = (props) => {
@@ -25,7 +18,7 @@ const CustomButton = (props) => {
 
   const { variant, color, size, onClick, knab, ...other } = props;
 
-  return (
+  return !knab ? (
     <MuiButton
       variant={variant || "contained"}
       color={color || "primary"}
@@ -35,10 +28,78 @@ const CustomButton = (props) => {
       // disableFocusRipple
       // disableRipple
       {...other}
-      className={!knab ? classes.root : classes.grabKnab}
+      className={classes.root}
     >
       {props.children}
     </MuiButton>
+  ) : (
+    <div className="hoverme">
+      <span>
+        <MuiButton
+          variant={variant || "contained"}
+          color={color || "primary"}
+          size={size || "large"}
+          onClick={onClick}
+          // disableElevation
+          // disableFocusRipple
+          // disableRipple
+          {...other}
+          className={`${classes.root} animationButton`}
+        >
+          {props.children}
+        </MuiButton>
+      </span>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
   );
 };
 

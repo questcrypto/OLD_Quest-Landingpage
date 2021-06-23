@@ -1,0 +1,38 @@
+@keyframes bang {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.makeStyles-btnDiv-38 {
+  .hoverme {
+    position: relative;
+
+    i {
+      position: absolute;
+      display: block;
+      left: 50%;
+      top: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 10px;
+      background: red;
+      opacity: 0;
+    }
+    &:hover {
+      @for $i from 1 through 50 {
+        i:nth-of-type(#{$i}) {
+          transform: translate3d(
+              random(190) - 100 + px,
+              random(50) - 100 + px,
+              0
+            )
+            rotate(random(360) + deg);
+          background: hsla(random(360), 100%, 50%, 1);
+          animation: bang 1000ms ease-out forwards;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
