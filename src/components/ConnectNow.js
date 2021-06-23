@@ -82,8 +82,8 @@ const ConnectNow = () => {
             </Grid>
             <Grid item md={5} xs={12}>
               <div className={classes.walletDiv} style={{ position: 'relative'}}>
-                <img src={skyline} alt='Meta Mask Wallet' style={{position: 'relative'}} />
-                <img src={FeatureMetaMask} alt='Meta Mask Wallet' style={{position: 'absolute', marginTop: '38px'}} />
+                <img src={skyline} alt='Meta Mask Wallet' style={{position: 'relative', marginTop: '30px', marginLeft: '-230px'}} />
+                <img src={FeatureMetaMask} alt='Meta Mask Wallet' style={{position: 'absolute', marginTop: '68px', marginLeft: '250px'}} />
               </div>
             </Grid>
           </Grid>

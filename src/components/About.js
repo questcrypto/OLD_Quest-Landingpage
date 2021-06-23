@@ -73,7 +73,7 @@ const About = () => {
               provides the token holder governance and participation in reward pools.
               <div>
                 <br />
-                Code audit performed by
+                Code audit performed by &nbsp;
                 <span 
                   className={classes.textUnderline}
                   onClick={() => openUrl(digitalAuditUrl)}
