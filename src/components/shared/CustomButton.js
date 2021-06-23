@@ -49,56 +49,56 @@ const CustomButton = (props) => {
           {props.children}
         </MuiButton>
       </span>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
+      <i className="animation__i"></i>
     </div>
   );
 };
