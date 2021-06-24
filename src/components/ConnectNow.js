@@ -60,14 +60,14 @@ const ConnectNow = () => {
       },
     },
     silloutteImg: {
-      position: "relative",
+      // position: "relative",
       marginTop: "30px",
-      marginLeft: "-230px",
+      marginLeft: "330px",
     },
     metamaskImg: {
-      position: "relative",
+      // position: "relative",
       marginTop: "30px",
-      marginRight: "760px",
+      marginRight: "860px",
     },
   }));
 
