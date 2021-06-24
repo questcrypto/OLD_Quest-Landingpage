@@ -1,6 +1,6 @@
 import { makeStyles, Button as MuiButton } from "@material-ui/core";
-import confetti from "canvas-confetti";
 import { useEffect } from "react";
+import confetti from "canvas-confetti";
 
 const useStyles = makeStyles((theme) => ({
   root: {

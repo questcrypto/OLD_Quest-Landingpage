@@ -168,10 +168,8 @@ const KnabCountDown = () => {
           knab={true}
           classes={{ root: classes.btn }}
           onClick={() => openUrl(grabKnab)}
-          onMouseOver={() => displyConfetti()}
-          className="hoverMe"
         >
-          GRAB KNABBB
+          GRAB KNAB
         </CustomButton>
       </div>
       <div className={classes.smDiv}>
