@@ -132,10 +132,6 @@ const KnabCountDown = () => {
     }, 1000);
   }, []);
 
-  const [showConfetti, setConfetti] = useState(false);
-  const displyConfetti = () => {
-    console.log("hello");
-  };
   return (
     <div id="ico" className={classes.root}>
       <div className={classes.heading}>
@@ -169,7 +165,8 @@ const KnabCountDown = () => {
       </div>
       <div className={classes.btnDiv}>
         <CustomButton
-          // classes={{ root: classes.btn }}
+          knab={true}
+          classes={{ root: classes.btn }}
           onClick={() => openUrl(grabKnab)}
           onMouseOver={() => displyConfetti()}
           className="hoverMe"

@@ -29,6 +29,8 @@ const ConnectNow = () => {
       borderRadius: "12px",
     },
     walletTextDiv: {
+      position: "relative",
+      zIndex: 2,
       padding: `${theme.spacing(8)}px ${theme.spacing(12)}px`,
       paddingRight: 0,
       "@media (max-width: 900px)": {
@@ -38,7 +40,11 @@ const ConnectNow = () => {
     walletDiv: {
       display: "flex",
       justifyContent: "center",
-      minWidth: "590px",
+      paddingTop: "34px",
+
+      [theme.breakpoints.down("md")]: {
+        paddingTop: "0",
+      },
     },
     title3: {
       paddingBottom: theme.spacing(3),
@@ -60,14 +66,24 @@ const ConnectNow = () => {
       },
     },
     silloutteImg: {
-      // position: "relative",
-      marginTop: "30px",
-      marginLeft: "330px",
+      display: "block",
+      objectFit: "contain",
     },
-    metamaskImg: {
-      // position: "relative",
-      marginTop: "30px",
-      marginRight: "860px",
+    metamaskImg: {},
+    container: {
+      position: "relative",
+      width: "100%",
+    },
+
+    bgImage: {
+      position: "absolute",
+      top: "10px",
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "flex-end",
+      overflow: "hidden",
+      // zIndex:/
     },
   }));
 
@@ -77,7 +93,7 @@ const ConnectNow = () => {
     <div className={classes.root}>
       <div className={classes.metaMaskOuter}>
         <div className={classes.metaMaskContainer}>
-          <Grid container>
+          <Grid container className={classes.container}>
             <Grid item md={7} xs={12}>
               <div className={classes.walletTextDiv}>
                 <Typography
@@ -111,17 +127,19 @@ const ConnectNow = () => {
                 // style={{ position: "relative" }}
               >
                 <img
-                  src={skyline}
-                  alt="Skyline-Silloutte"
-                  className={classes.silloutteImg}
-                />
-                <img
                   src={FeatureMetaMask}
                   alt="Meta Mask Fox"
                   className={classes.metamaskImg}
                 />
               </div>
             </Grid>
+            <div className={classes.bgImage}>
+              <img
+                src={skyline}
+                alt="Skyline-Silloutte"
+                className={classes.silloutteImg}
+              />
+            </div>
           </Grid>
         </div>
       </div>
