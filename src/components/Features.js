@@ -83,7 +83,7 @@ const Features = () => {
         </Typography>
         <Typography variant="subtitle1" gutterBottom className={classes.subTitle}>
           QUEST Crypto is proud to announce the launch of its ICO token, KNAB. The KNAB token will be<br />
-          used to track company performance and will give governance to holder.<br />
+          used to track company performance and will give governance to the holder.<br />
           <span className={classes.subSubTitle} onClick={() => openUrl(socialCommunity)}>
             Join our social communities for real-time updates
           </span>
@@ -116,7 +116,7 @@ const Features = () => {
               </div>
               <Typography variant="h4" className={classes.title}>REAL ESTATE</Typography>
               <Typography variant="subtitle1" className={classes.subTitle2}>
-                Quest Crypto brings establised products, like real estate, into the
+                Quest Crypto brings established products, like real estate, into the
                 DeFi world. Real Estate is the most reliable source of wealth in every country
                 on the planet.
               </Typography>
