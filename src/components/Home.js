@@ -51,7 +51,7 @@ const Home = () => {
           <img src={Triangle} style={{ position: 'absolute' }} alt='' />
           <div>
             <Typography variant="h3" className={classes.title}>
-              Your Crypto gateway to Real Estate ownership
+              Your Crypto Gateway to Real Estate Ownership
             </Typography>
           </div>
           <div>
