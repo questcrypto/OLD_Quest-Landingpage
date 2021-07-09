@@ -1,6 +1,7 @@
 import { makeStyles, Grid, Typography } from '@material-ui/core';
 
-import HomeImg from '../assets/images/home.png';
+// import HomeImg from '../assets/images/home.png';
+import HomeImg from '../assets/images/home2.png';
 import CustomButton from './shared/CustomButton';
 import Triangle from '../assets/images/triangle.png';
 
