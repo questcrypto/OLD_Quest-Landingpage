@@ -99,7 +99,7 @@ const KnabCountDown = () => {
   });
 
   useEffect(() => {
-    let countDownDate = new Date("July 1, 2021 00:00:00").getTime();
+    let countDownDate = new Date("August 31, 2021 00:00:00").getTime();
     // Update the count down every 1 second
     let data = setInterval(function () {
       // Get today's date and time
@@ -142,7 +142,7 @@ const KnabCountDown = () => {
       </div>
       <div className={classes.subTitle}>
         <Typography variant="h6">
-          The worlds of real estate and crypto are changing in ...
+          The worlds of real estate and crypto have changed! Buy KNAB Now. The ICO ends in ...
         </Typography>
       </div>
       <div className={classes.timerDiv}>
