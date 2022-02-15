@@ -131,7 +131,7 @@ const Features = () => {
               <div className={classes.imgDiv}>
                 <img src={IcoImg} alt="ICO" />
               </div>
-              <Typography variant="h4" className={classes.title}>IGO</Typography>
+              <Typography variant="h4" className={classes.title}>GOVERNANCE</Typography>
               <Typography variant="subtitle1" className={classes.subTitle2}>
                 Participate in the KNAB IGO for governance, rewards, and access to the 
                 QUEST Marketplace.
