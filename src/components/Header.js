@@ -15,7 +15,7 @@ import CustomButton from './shared/CustomButton';
 const menuItems = [
   { key: 'home', label: 'Home', id: '#home' },
   { key: 'features', label: 'Features', id: '#features' },
-  { key: 'ico', label: 'ICO', id: '#ico' },
+  { key: 'ico', label: 'IGO', id: '#ico' },
   { key: 'docs', label: 'Docs', id: '#docs' },
   // { key: 'about', label: 'About', id: '#about' },
   { key: 'faq', label: 'FAQ', id: '#faq' }
