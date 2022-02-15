@@ -131,15 +131,10 @@ const Features = () => {
               <div className={classes.imgDiv}>
                 <img src={IcoImg} alt="ICO" />
               </div>
-              <Typography variant="h4" className={classes.title}>ICO</Typography>
+              <Typography variant="h4" className={classes.title}>IGO</Typography>
               <Typography variant="subtitle1" className={classes.subTitle2}>
                 Participate in the KNAB IGO for governance, rewards, and access to the 
-                QUEST Marketplace. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                QUEST Marketplace.
               </Typography>
               <div className={classes.btnDiv}>
                 <CustomButton onClick={() => openUrl(learnMore3)}>LEARN MORE</CustomButton>
