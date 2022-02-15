@@ -63,7 +63,7 @@ const Home = () => {
           </Typography>
           </div>
           <div className={classes.btnDiv}>
-            <CustomButton onClick={() => openUrl(startYourQuest)}>BUY KNAB IGO</CustomButton>
+            <CustomButton onClick={() => openUrl(startYourQuest)}>BUY KNAB DAO</CustomButton>
           </div>
         </Grid>
 
