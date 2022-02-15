@@ -82,8 +82,8 @@ const Features = () => {
           Have Not United - Until Now
         </Typography>
         <Typography variant="subtitle1" gutterBottom className={classes.subTitle}>
-          QUEST Crypto is proud to announce the launch of its ICO token, KNAB. The KNAB token will be<br />
-          used to track company performance and will give governance to the holder.<br />
+          QUEST Crypto is proud to announce the launch of its governance token, KNAB. The KNAB token will be<br />
+          used to track company performance and will give participation and voting to the holder.<br />
           <span className={classes.subSubTitle} onClick={() => openUrl(socialCommunity)}>
             Join our social communities for real-time updates
           </span>
