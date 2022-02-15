@@ -133,7 +133,7 @@ const Features = () => {
               </div>
               <Typography variant="h4" className={classes.title}>ICO</Typography>
               <Typography variant="subtitle1" className={classes.subTitle2}>
-                Participate in the KNAB ICO for governance, rewards, and access to the 
+                Participate in the KNAB IGO for governance, rewards, and access to the 
                 QUEST Marketplace. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
