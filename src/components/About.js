@@ -68,7 +68,7 @@ const About = () => {
               KNAB ICO
             </Typography>
             <Typography variant="subtitle1" className={classes.subTitle}>
-              The QUEST Crypto ICO token is KNAB, or "Bank" backwards as a nod to flipping
+              The QUEST Crypto governance token is KNAB, or "Bank" backwards as a nod to flipping
               current financial institutions on their heads. The token tracks company performance and
               provides the token holder governance and participation in reward pools.
               <div>
