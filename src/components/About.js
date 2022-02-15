@@ -65,7 +65,7 @@ const About = () => {
         <Grid item md={7} xs={12} sm={12}>
           <div className={classes.leftContent}>
             <Typography variant="h4" className={classes.title}>
-              KNAB ICO
+              KNAB DAO
             </Typography>
             <Typography variant="subtitle1" className={classes.subTitle}>
               The QUEST Crypto governance token is KNAB, or "Bank" backwards as a nod to flipping
