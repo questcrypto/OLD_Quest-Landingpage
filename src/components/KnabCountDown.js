@@ -142,7 +142,7 @@ const KnabCountDown = () => {
       </div>
       <div className={classes.subTitle}>
         <Typography variant="h6">
-          The worlds of real estate and crypto have changed! Buy KNAB Now. The ICO ends in ...
+          The worlds of real estate and crypto have changed! Buy KNAB Now. The IGO ends in ...
         </Typography>
       </div>
       <div className={classes.timerDiv}>
