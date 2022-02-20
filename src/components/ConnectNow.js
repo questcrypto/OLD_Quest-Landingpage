@@ -5,7 +5,7 @@ import skyline from "../assets/images/skyline.svg";
 
 const ConnectNow = () => {
   // URLs
-  const connect = "https://questcrypto.app";
+  const connect = "https://questcrypto.com";
   const openUrl = (url) => {
     try {
       window.open(url);
