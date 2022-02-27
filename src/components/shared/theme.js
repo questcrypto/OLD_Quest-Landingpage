@@ -1,11 +1,12 @@
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles';
+import { responsiveFontSizes } from '@material-ui/core';
 
 // import NexaBold from '../../assets/fonts/NexaBold.otf';
 // import NexaRegular from '../../assets/fonts/NexaRegular.otf';
 // import NexaLight from '../../assets/fonts/NexaLight.otf';
 // import NexaThin from '../../assets/fonts/NexaThin.otf';
 
-const temp = createMuiTheme({
+const temp = createTheme({
   palette: {
     primary: {
       main: '#1E3444',
