@@ -12,7 +12,7 @@ import ConnectNow from './components/ConnectNow';
 import Faq from './components/Faq';
 // import NewsLetter from './components/NewsLetter';
 import StartQuest from './components/StartQuest';
-import ContactUs from './components/ContactUs';
+import TypeFormContactUs from './components/TypeFormContactUs';
 import Footer from './components/Footer';
 
 const useStyles = makeStyles(theme => ({
@@ -47,7 +47,7 @@ const App = () => {
           {/* <NewsLetter /> */}
 
           <StartQuest />
-          <ContactUs />
+          <TypeFormContactUs />
           <Footer />
         </div>
       </ThemeProvider>
